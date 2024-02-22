@@ -2,10 +2,9 @@
 using System.Collections;
 
 public class LookAtTarget : MonoBehaviour {
-
     public GameObject defaultTarget; // the default target that the camera should look at
 
-    [Tooltip("This is the object that the script's game object is currently look at based on the player clicking on a gameObject")]
+    //This is the object that the script's game object is currently look at based on the player clicking on a gameObject
     public GameObject currentTarget; // the target that the camera should look at
 
     // Start happens once at the beginning of playing
@@ -37,13 +36,13 @@ public class LookAtTarget : MonoBehaviour {
             hits = Physics.RaycastAll(ray);
 
             // if there are hits
-            if (hits.Length>0)
+            if (hits.Length > 0)
             {
                 // get the first object hit
                 RaycastHit hit = hits[0];
                 currentTarget = hit.collider.gameObject;
 
-                Debug.Log("defaultTarget changed to "+currentTarget.name);
+                Debug.Log("defaultTarget changed to " + currentTarget.name);
             }
         } else if (Input.GetMouseButtonDown(1)) // if the second mouse button is pressed
         {
@@ -52,11 +51,11 @@ public class LookAtTarget : MonoBehaviour {
         }
 
        // if a currentTarget is set, then look at it
-        if (currentTarget!=null)
+        if (currentTarget != null)
         {
             // transform here refers to the attached gameobject this script is on.
             // the LookAt function makes a transform point it's Z axis towards another point in space
-            // In this case it is pointing towards the target.transform
+            // in this case it is pointing towards the target.transform
             transform.LookAt(currentTarget.transform);
         } else // reset the look at back to the default
         {

@@ -3,9 +3,10 @@ using System.Collections;
 
 public class RotateAround : MonoBehaviour {
 
-    [Tooltip("This is the object that the script's game object will rotate around")]
+    // This is the object that the script's game object will rotate around
 	public Transform target; // the object to rotate around
-    [Tooltip("This is the speed at which the object rotates")]
+
+    // This is the speed at which the object rotates
 	public int speed; // the speed of rotation
 	
 	void Start() {

@@ -7,34 +7,17 @@ using UnityEngine;
 /// </summary>
 public class Projectile : MonoBehaviour
 {
-    
-    [Tooltip("The distance this projectile will move each second in meters.")]
+    // "The distance this projectile will move each second in meters
     public float projectileSpeed = 3.0f;
 
-    [Tooltip("How far away from the main camera before destroying the projectile gameobject in meters.")]
+    // How far away from the main camera before destroying the projectile gameobject in meters
     public float destroyDistance = 20.0f;
 
-    /// <summary>
-    /// Description:
-    /// Standard Unity function called once per frame
-    /// Inputs: 
-    /// none
-    /// Returns: 
-    /// void (no return)
-    /// </summary>
     private void Update()
     {
         MoveProjectile();
     }
 
-    /// <summary>
-    /// Description:
-    /// Move the projectile in the direction it is heading
-    /// Inputs: 
-    /// none
-    /// Returns: 
-    /// void (no return)
-    /// </summary>
     private void MoveProjectile()
     {
         // move the transform

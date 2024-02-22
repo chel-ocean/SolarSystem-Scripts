@@ -6,20 +6,17 @@ using UnityEngine;
 public class Spawner : MonoBehaviour
 {
     
-    [Tooltip("The Prefab to be spawned into the scene.")]
+    // The Prefab to be spawned into the scene
     public GameObject spawnPrefab = null;
 
-    [Tooltip("The time between spawns")]
+    // The time between spawns
     public float spawnTime = 5.0f;
 
     // keep track of time passed for next spawn
     private float nextSpawn = 0f;
 
     // Start is called before the first frame update
-    void Start()
-    {
-        nextSpawn = 0f;
-    }
+    void Start(){ nextSpawn = 0f; }
 
     // Update is called once per frame
     void Update()
@@ -36,6 +33,5 @@ public class Spawner : MonoBehaviour
             // reset the time until nextSpawn
             nextSpawn = 0f;
         }
-
     }
 }
